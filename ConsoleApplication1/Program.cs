@@ -10,11 +10,15 @@ namespace NetScan
         static void Main(string[] args)
         {
             Ping sender = new Ping();
-
-            string ipBase = "192.168.1.";
             Stopwatch s = new Stopwatch();
-            s.Start();
+            string ipBase = "";
 
+            if (args.Length == 0)
+            {
+                ipBase = "192.168.1.";
+            }
+
+            s.Start();
             for(int i = 1; i < 256; i++)
             {
                 try
